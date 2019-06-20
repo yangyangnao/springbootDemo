@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>车智汇通后台管理系统</title>
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta http-equiv="keywords" content="sh,easyee,javaee,framework,java">
+	<meta http-equiv="description" content="CZHT Backend Platform">
+
+	<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="js/style/easyee.main.css">
+
+	<link rel="stylesheet" type="text/css" href="js/easyui/themes/bootstrap/easyui.css" id="themeLink">
+	<link rel="stylesheet" type="text/css" href="js/easyui/themes/icon.css">
+	<!-- <link rel="stylesheet" type="text/css" href="js/easyui/portal.css"> -->
+	<link rel="stylesheet" type="text/css" href="js/easyui/demo/demo.css">
+	<link rel="stylesheet" type="text/css" href="js/corecss/core.min.css">
+
+	<script type="text/javascript">
+        var EasyEE={};
+	</script>
+
+	<script type="text/javascript" src="js/easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="js/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="js/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="js/easyuiex/css/easyuiex.css">
+	<script type="text/javascript" src="js/easyuiex/easy.easyuiex.js"></script>
+	<script type="text/javascript" src="js/easyuiex/easy.easyuiex-validate.js"></script>
+	<script type="text/javascript" src="js/easyuiex/easy.jquery.edatagrid.js"></script>
+	<script type="text/javascript" src="js/easyuiex/lang/easy.easyuiex-lang-zh_CN.js"></script>
+
+	<script type="text/javascript" src="js/easyee/lang/easyee-zh_CN.js"></script>
+	<script type="text/javascript" src="js/easyee/easyee-sm.main.js"></script>
+	<script th:inline="javascript">
+        EasyEE.menuTreeJson = JSON.parse([[${session.menuTreeJson}]]);
+	</script>
+	<script type="text/javascript" src="js/baseplatform/main/main.js"></script>
+	<script type="text/javascript" src="js/easyee/jquery.cookie.js"></script>
+
+
+</head>
+
+<body class="easyui-layout" >
+	<script>
+
+        document.Global = {};
+        document.Global.openTab = function(title,url,icon,ifIframe) {
+            uiEx.openTab("#tabs",title,url,icon,ifIframe);
+        }
+        document.Global.reloadSelTab = function() {
+            alert("");
+            uiEx.reloadSelTab("#tabs");
+		}
+        document.Global.closeTab = function(title) {
+            $("#tabs").tabs('close',title);
+        }
+
+
+
+
+	</script>
+
+	<div id="easysshtop" data-options="region:'north',split:true" title="车智汇通后端管理基础平台">
+		<div style="float: right; line-height: 30px;text-align: right;">
+			欢迎 <span style="font-weight:bold" th:text="${session.userSession.realName }"> </span>
+			<span id="showtime">
+			</span>
+			 <a id="btnExit" href="logout" class="easyui-linkbutton" data-options="iconCls:'icon-monitor_go'">退出系统</a>
+		</div>
+	</div>
+	<div data-options="region:'west',title:'功能菜单',split:true" style="width:180px;">
+		<div style="margin:10px 0;"></div>
+		<ul id="menu" class="easyui-tree" data-options="animate:true,lines:false" ></ul>
+	</div>
+
+
+	<div data-options="region:'center',split:true" style="border:0px">
+		<div class="easyui-tabs" id="tabs" data-options="fit:true">
+			<div title="最近报表"  iconCls="icon-chart_bar" data-options="">&nbsp;</div>
+		</div>
+	</div>
+
+	<div data-options="region:'south',split:false" style="height:30px;line-height: 30px;text-align: center;">用科技连接世界，让汽车买卖更简单</div>
+
+</body>
+</html>

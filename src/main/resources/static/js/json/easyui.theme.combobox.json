@@ -1,0 +1,32 @@
+[
+	{
+	    "value":"default",
+	    "text":"default"
+	    ,"selected":true
+    }
+    ,
+    {
+	     "value":"black",
+	    "text":"black"
+    }
+    ,
+    {
+	     "value":"bootstrap",
+	    "text":"bootstrap"
+    }
+    ,
+    {
+	    "value":"gray",
+	    "text":"gray"
+    }
+    ,
+    {
+	     "value":"metro",
+	    "text":"metro"
+    }
+  ,
+  {
+    "value":"material",
+    "text":"material"
+  }
+]
